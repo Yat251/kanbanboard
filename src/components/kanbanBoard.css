@@ -1,0 +1,301 @@
+.kanban-board {
+    display: flex;
+    flex-direction: column;
+    /* gap: 16px; */
+    /* padding: 16px; */
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+/* Dropdown toggle button */
+.dropdown-toggle {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    gap: 8px;
+}
+
+/* SVG icon styling */
+.dropdown-toggle .icon-display,
+.dropdown-toggle .icon-arrow {
+    width: 16px;
+    height: 16px;
+}
+
+/* Dropdown content container */
+.dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    z-index: 1000;
+    top: 10%;
+    left: 17px;
+    min-width: 200px;
+    box-sizing: border-box;
+}
+
+/* Label styling */
+.dropdown-content label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #444;
+}
+
+.dropdown-content select {
+    width: 100%;
+    padding: 6px 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+
+/* Flexbox for Kanban Columns */
+.columns {
+    /* height: 100vh; */
+    min-height: 100vh;
+    display: flex;
+    overflow-x: auto;
+    cursor: grab;
+    user-select: none;
+    scrollbar-width: none; /*Hides scrollbar for Firefox*/
+}
+/* Hides scrollbar for WebKit-based browsers (Chrome, Edge, Safari) */
+.columns::-webkit-scrollbar {
+    display: none; 
+}
+
+.columns:active {
+    cursor: grabbing; /* Change cursor on drag */
+}
+
+/* Kanban Column Styling */
+.kanban-column {
+    flex: 0 0 300px; /* Each column has a fixed width */
+    background: #f7f9fc;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px; /* Ensures a consistent column height */
+}
+
+.kanban-column-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+.kanban-column-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.kanban-column-details{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.kanban-column-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.user-initials {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.user-initials .initials {
+    width: 32px;
+    height: 32px;
+    background-color: #ccc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-dot {
+    position: absolute;
+    bottom: -1px;
+    right: 1px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 1px;
+}
+
+.status-online {
+    background-color: green;
+}
+
+.status-offline {
+    background-color: red;
+}
+
+.kanban-column-details {
+    text-align: center;
+}
+
+.kanban-column-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+
+.kanban-column-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.kanban-column-count {
+    font-size: 15px;
+    color: #777;
+    margin-left: 10px;
+}
+
+.kanban-tickets {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Ticket Card Styling */
+.kanban-ticket {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+/* .kanban-ticket:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+} */
+
+/* Ticket Header */
+.kanban-ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kanban-ticket-title {
+    margin-top: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Ticket Body */
+.kanban-ticket-body {
+    margin-top: 8px;
+}
+
+.kanban-ticket-tags {
+    display: flex;
+    font-size: 14px;
+    color: #555;
+}
+
+.kanban-ticket-user {
+    font-size: 14px;
+    color: #777;
+}
+.kanban-ticket-row1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-bottom: 8px; */
+}
+.kanban-ticket-row2{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+
+.kanban-ticket-id {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+.user-icon, .status-icon {
+    margin-top: 7px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+.priority-svg {
+    display: inline-block;
+    margin-right: 4px;
+    border: 0.1px solid #a3a3a3;
+    border-radius: 4px;
+}
+.priority-svg img{
+    position: relative;
+    bottom: -1.5px;
+    height: 20px;
+    width: 23px;
+}
+
+.tag-svg {
+    display: inline-block;
+    padding: 4px 6px;
+    font-size: 12px;
+    color: #494747;
+    border: 0.1px solid #a3a3a3;
+    border-radius: 4px;
+    margin-left: 2px;
+    margin-right: 4px;
+}
+.tag-svg::before {
+    content: '';
+    display: inline-block;
+    margin-right: 4px;
+    width: 10px; 
+    height: 10px;
+    border-radius: 50%;
+    background-color: grey;
+}
+
