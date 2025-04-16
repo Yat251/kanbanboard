@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Assignment given by a company for Placements@IIT Bombay for frontend Dev role...
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
